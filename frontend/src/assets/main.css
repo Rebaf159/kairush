@@ -1,0 +1,130 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-400;
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  @apply backdrop-blur-md bg-white/10 border border-white/20;
+}
+
+.glass-dark {
+  @apply backdrop-blur-md bg-black/20 border border-white/10;
+}
+
+/* Custom toast styles */
+.custom-toast {
+  @apply glass-dark text-white;
+}
+
+.custom-toast-body {
+  @apply text-sm;
+}
+
+.custom-toast-container {
+  @apply z-50;
+}
+
+/* Animation utilities */
+.animate-gradient {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Hover effects */
+.hover-scale {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.hover-scale:hover {
+  @apply scale-105 brightness-110;
+}
+
+/* Form styles */
+.form-input {
+  @apply w-full px-4 py-3 bg-dark-800/50 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300;
+}
+
+.form-textarea {
+  @apply form-input resize-none min-h-[100px];
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-lg hover-scale focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-dark-900 transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-gradient-to-r from-secondary-500 to-secondary-600 text-white font-semibold rounded-lg hover-scale focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2 focus:ring-offset-dark-900 transition-all duration-300;
+}
+
+.btn-ghost {
+  @apply px-6 py-3 bg-transparent border border-white/20 text-white font-semibold rounded-lg hover-scale hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-dark-900 transition-all duration-300;
+}
+
+/* Card styles */
+.card {
+  @apply glass-dark rounded-xl p-6 hover-scale;
+}
+
+.card-character {
+  @apply card cursor-pointer;
+}
+
+/* Message bubble styles */
+.message-user {
+  @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-2xl rounded-br-md px-4 py-3 max-w-xs ml-auto;
+}
+
+.message-ai {
+  @apply bg-gradient-to-r from-secondary-500 to-secondary-600 text-white rounded-2xl rounded-bl-md px-4 py-3 max-w-xs mr-auto;
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply animate-pulse bg-gray-700 rounded;
+}
+
+/* Page transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
